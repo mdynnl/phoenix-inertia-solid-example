@@ -41,7 +41,7 @@ defmodule MyApp.MixProject do
       {:phoenix_live_view, "~> 1.0.0"},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.3"},
-      {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
+      {:inertia, "~> 2.0.0"},
       {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
       {:heroicons,
        github: "tailwindlabs/heroicons",
@@ -74,10 +74,9 @@ defmodule MyApp.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind my_app", "esbuild my_app"],
+      "assets.build": ["tailwind my_app"],
       "assets.deploy": [
         "tailwind my_app --minify",
-        "esbuild my_app --minify",
         "phx.digest"
       ]
     ]

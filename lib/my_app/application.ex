@@ -16,6 +16,11 @@ defmodule MyApp.Application do
       {Finch, name: MyApp.Finch},
       # Start a worker by calling: MyApp.Worker.start_link(arg)
       # {MyApp.Worker, arg},
+
+      # Start the SSR process pool
+      # You must specify a `path` option to locate the directory where the `ssr.js` file lives.
+      {Inertia.SSR, path: Path.join([Application.app_dir(:my_app), "priv"])},
+
       # Start to serve requests, typically the last entry
       MyAppWeb.Endpoint
     ]

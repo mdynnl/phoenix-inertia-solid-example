@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "esbuild-plugin-solid": "^0.6.0",
+    "inertia-adapter-solid": "^0.2.0",
+    "solid-js": "^1.9.3"
+  }
+}

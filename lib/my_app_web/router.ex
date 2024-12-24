@@ -8,6 +8,7 @@ defmodule MyAppWeb.Router do
     plug :put_root_layout, html: {MyAppWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Inertia.Plug
   end
 
   pipeline :api do
@@ -18,6 +19,8 @@ defmodule MyAppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/dashboard", PageController, :dashboard
+    get "/about", PageController, :about
   end
 
   # Other scopes may use custom stacks.
